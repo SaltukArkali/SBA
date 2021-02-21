@@ -1,4 +1,4 @@
-@US_01
+@US_01 @SmokeTest
 Feature: US_01 success register with valid and invalid credentials
 
   @TC_0101
@@ -21,6 +21,6 @@ Feature: US_01 success register with valid and invalid credentials
 
     Examples: TC_0102 invalid username and password
       |username| password|
-      |tony    | kay4-gj |
-      |boby5   | 21iopd-5|
-      |TOMTOM  | lfap-?5 |
+      |tonywgg   | kay4-rgj |
+      |boby5gg   | 21iopgd-5|
+      |TOMTOMgr  | lfape-?5 |

@@ -53,6 +53,7 @@ public class US01Login {
 
     @Then("User clicks log out button")
     public void user_clicks_log_out_button() {
+        ReusableMethods.waitFor(2);
         paraBankPage01.logOutLink.click();
     }
 

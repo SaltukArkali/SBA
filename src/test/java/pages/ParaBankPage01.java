@@ -16,6 +16,7 @@ public class ParaBankPage01 {
 
     @FindBy(name = "username")
     public WebElement usernameBox;
+
     @FindBy(name = "password")
     public WebElement passwordBox;
 

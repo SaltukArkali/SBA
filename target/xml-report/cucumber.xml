@@ -1,34 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="48.561">
-<testcase classname="US_01 success register with valid and invalid credentials" name="TC_0101 User verifies login" time="20.692">
-<system-out><![CDATA[Given User enters the main page.............................................passed
-And User enters username and password.......................................passed
-And User clicks the log in button...........................................passed
-And User can see his name on the left side of the page......................passed
-And User is able to see accounts overview...................................passed
-And User is able to see total balance under the accounts....................passed
-Then User clicks log out button.............................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="14.691">
+<testcase classname="API01 Verify account and customer pairs and transaction" name="TC0101API Account verify" time="10.887">
+<system-out><![CDATA[Given Use API1 endpoint "http://parabank.parasoft.com/parabank/services/bank/accounts/13566".passed
+And Get all the information of accounts of the customer.....................passed
+And Assert API1 the status code is 200......................................passed
+Then Assert customerId is "12434"...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="US_01 success register with valid and invalid credentials" name="TC_0102 User enters invalid username and password" time="8.868">
-<system-out><![CDATA[Given User enters the main page.............................................passed
-And User enters false username "tony" and password "kay4-gj"................passed
-And User clicks the log in button...........................................passed
-Then User can not log in and verifies the Error message is displayed........passed
-]]></system-out>
-</testcase>
-<testcase classname="US_01 success register with valid and invalid credentials" name="TC_0102 User enters invalid username and password 2" time="8.746">
-<system-out><![CDATA[Given User enters the main page.............................................passed
-And User enters false username "boby5" and password "21iopd-5"..............passed
-And User clicks the log in button...........................................passed
-Then User can not log in and verifies the Error message is displayed........passed
-]]></system-out>
-</testcase>
-<testcase classname="US_01 success register with valid and invalid credentials" name="TC_0102 User enters invalid username and password 3" time="8.867">
-<system-out><![CDATA[Given User enters the main page.............................................passed
-And User enters false username "TOMTOM" and password "lfap-?5"..............passed
-And User clicks the log in button...........................................passed
-Then User can not log in and verifies the Error message is displayed........passed
+<testcase classname="API01 Verify account and customer pairs and transaction" name="TC0102API Transaction verify" time="2.172">
+<system-out><![CDATA[Given Use API2 endpoint "http://parabank.parasoft.com/parabank/services/bank/accounts/13566/transactions".passed
+And Get all the transactions of the customer................................passed
+And Assert API2 the status code is 200......................................passed
+And Verify the number of transaction as 3...................................passed
+And verify the first id of transaction is 14476.............................passed
+Then verify the amount of third transaction is "500.0"......................passed
 ]]></system-out>
 </testcase>
 </testsuite>

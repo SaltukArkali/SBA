@@ -1,309 +1,145 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/a.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/API01.feature");
 formatter.feature({
-  "name": "US_01 success register with valid and invalid credentials",
+  "name": "API01 Verify account and customer pairs and transaction",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US_01"
+      "name": "@API01"
+    },
+    {
+      "name": "@SmokeTest"
     }
   ]
 });
 formatter.scenario({
-  "name": "TC_0101 User verifies login",
+  "name": "TC0101API Account verify",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US_01"
+      "name": "@API01"
     },
     {
-      "name": "@TC_0101"
+      "name": "@SmokeTest"
+    },
+    {
+      "name": "@TC0101API"
     }
   ]
 });
 formatter.step({
-  "name": "User enters the main page",
+  "name": "Use API1 endpoint \"http://parabank.parasoft.com/parabank/services/bank/accounts/13566\"",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_the_main_page()"
+  "location": "stepdefinitions.API01Get.use_API_endpoint(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters username and password",
+  "name": "Get all the information of accounts of the customer",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_username_and_password()"
+  "location": "stepdefinitions.API01Get.get_all_the_information_of_accounts_of_the_customer()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks the log in button",
+  "name": "Assert API1 the status code is 200",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_clicks_the_log_in_button()"
+  "location": "stepdefinitions.API01Get.assert_API1_the_status_code_is(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User can see his name on the left side of the page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_can_see_his_name_on_the_left_side_of_the_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User is able to see accounts overview",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_is_able_to_see_accounts_overview()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User is able to see total balance under the accounts",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_is_able_to_see_total_balance_under_the_accounts()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User clicks log out button",
+  "name": "Assert customerId is \"12434\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_clicks_log_out_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "name": "TC_0102 User enters invalid username and password",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@TC_0102"
-    }
-  ]
-});
-formatter.step({
-  "name": "User enters the main page",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "User enters false username \"\u003cusername\u003e\" and password \"\u003cpassword\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User clicks the log in button",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "User can not log in and verifies the Error message is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "TC_0102 invalid username and password",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password"
-      ]
-    },
-    {
-      "cells": [
-        "tony",
-        "kay4-gj"
-      ]
-    },
-    {
-      "cells": [
-        "boby5",
-        "21iopd-5"
-      ]
-    },
-    {
-      "cells": [
-        "TOMTOM",
-        "lfap-?5"
-      ]
-    }
-  ]
-});
-formatter.scenario({
-  "name": "TC_0102 User enters invalid username and password",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@US_01"
-    },
-    {
-      "name": "@TC_0102"
-    }
-  ]
-});
-formatter.step({
-  "name": "User enters the main page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_the_main_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User enters false username \"tony\" and password \"kay4-gj\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_false_and(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User clicks the log in button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_clicks_the_log_in_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User can not log in and verifies the Error message is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_can_not_log_in_and_verifies_the_Error_message_is_displayed()"
+  "location": "stepdefinitions.API01Get.assert_customerId_is(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "TC_0102 User enters invalid username and password",
+  "name": "TC0102API Transaction verify",
   "description": "",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US_01"
+      "name": "@API01"
     },
     {
-      "name": "@TC_0102"
+      "name": "@SmokeTest"
+    },
+    {
+      "name": "@TC0102API"
     }
   ]
 });
 formatter.step({
-  "name": "User enters the main page",
+  "name": "Use API2 endpoint \"http://parabank.parasoft.com/parabank/services/bank/accounts/13566/transactions\"",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_the_main_page()"
+  "location": "stepdefinitions.API01Get.use_API2_endpoint(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters false username \"boby5\" and password \"21iopd-5\"",
+  "name": "Get all the transactions of the customer",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_false_and(java.lang.String,java.lang.String)"
+  "location": "stepdefinitions.API01Get.get_all_the_transactions_of_the_customer()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks the log in button",
+  "name": "Assert API2 the status code is 200",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_clicks_the_log_in_button()"
+  "location": "stepdefinitions.API01Get.assert_API2_the_status_code_is(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User can not log in and verifies the Error message is displayed",
+  "name": "Verify the number of transaction as 3",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.API01Get.verify_the_number_of_transaction_as(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "verify the first id of transaction is 14476",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.API01Get.verify_the_first_id_of_transaction_is(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "verify the amount of third transaction is \"500.0\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.US01Login.user_can_not_log_in_and_verifies_the_Error_message_is_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "TC_0102 User enters invalid username and password",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@US_01"
-    },
-    {
-      "name": "@TC_0102"
-    }
-  ]
-});
-formatter.step({
-  "name": "User enters the main page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_the_main_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User enters false username \"TOMTOM\" and password \"lfap-?5\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_enters_false_and(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User clicks the log in button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_clicks_the_log_in_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User can not log in and verifies the Error message is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.US01Login.user_can_not_log_in_and_verifies_the_Error_message_is_displayed()"
+  "location": "stepdefinitions.API01Get.verify_the_amount_of_third_transaction_is(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
