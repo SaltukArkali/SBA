@@ -5,17 +5,11 @@ import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.junit.Test;
 import org.testng.Assert;
-import pojos.ParaBankPojo01;
 import utilities.WriteToTxt;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 
 public class API01Get {
@@ -58,7 +52,7 @@ public class API01Get {
     }
 
     @Given("Get all the transactions of the customer")
-    public void get_all_the_transactions_of_the_customer() {
+    public void get_all_the_transactions_of_the_customer() throws IOException {
         json = response.jsonPath();
         allTransactionData = json.getList("$");
         System.out.println(allTransactionData);
